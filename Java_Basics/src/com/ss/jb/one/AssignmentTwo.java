@@ -24,14 +24,11 @@ public class AssignmentTwo {
 	
 	int generatedNum;
 	
-	public AssignmentTwo() {
-		generateNumber();
-	}
-	
 	/**
 	 * Runs until the user has guess 5 times incorrectly or guesses within 10 of the generated number
 	 */
 	public void run() {
+		generateNumber();
 		System.out.println(generatedNum);
 		int result = 0;
 		boolean success = false;
@@ -51,12 +48,19 @@ public class AssignmentTwo {
 		}
 	}
 	
+	/**
+	 * Generate a random number from 1-100
+	 */
 	private void generateNumber() {
 		Random random = new Random();
 		generatedNum = random.nextInt(100) + 1;
 	}
 	
-	public int attemptGuess() {
+	/**
+	 * Ask the user for a guess and display output based on correctness/validity
+	 * @return -1 for invalid, 0 for incorrect, 1 for correct
+	 */
+	private int attemptGuess() {
 		System.out.print("Make a guess: ");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String input;
@@ -86,10 +90,6 @@ public class AssignmentTwo {
 			System.out.println("Incorrect!");
 			return 0;
 		}
-	}
-	
-	public int getGeneratedNum() {
-		return generatedNum;
 	}
 
 }
