@@ -29,7 +29,6 @@ public class AssignmentTwo {
 	 */
 	public void run() {
 		generateNumber();
-		System.out.println(generatedNum);
 		int result = 0;
 		boolean success = false;
 		for (int i = 0; i < 5 && !success; i++) {
